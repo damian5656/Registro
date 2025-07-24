@@ -11,8 +11,11 @@ document.getElementById("registroForm").addEventListener("submit", function(even
   const mensajes = document.getElementById("mensajes");
   const tel = document.getElementById("tel").value.trim();
   const fecnac = document.getElementById("fechaNacimiento").value;
+  
 
-  mensaje.textContent = ""; // Limpia mensaje anterior
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])[\w@#$%^&+=!]{8,}$/;
+
+  mensaje.textContent = ""; 
 
   if (nombre.length < 3) {
     mensaje.textContent = "El nombre debe tener al menos 3 caracteres.";
@@ -39,8 +42,8 @@ document.getElementById("registroForm").addEventListener("submit", function(even
     return;
   }
 
-  if (pass.length < 6) {
-    mensaje.textContent = "La contraseña debe tener al menos 6 caracteres.";
+  if (!regex.test(pass)) {
+    mensaje.textContent = "La contraseña no es segura. Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo.";
     return;
   }
 
@@ -52,11 +55,11 @@ document.getElementById("registroForm").addEventListener("submit", function(even
   mensaje.style.color = "green";
   mensaje.textContent = "Formulario enviado correctamente.";
   mensajes.innerHTML = `
-  <p><strong>Nombre:</strong> ${nombre}</p>
-  <p><strong>Apellido:</strong> ${apellido}</p>
-  <p><strong>Email:</strong> ${email}</p>
-  <p><strong>Dirección:</strong> ${direccion}</p>
-  <p><strong>Teléfono:</strong> ${tel}</p>
-  <p><strong>Fecha de nacimiento:</strong> ${fecnac}</p>
-`;
+    <p><strong>Nombre:</strong> ${nombre}</p>
+    <p><strong>Apellido:</strong> ${apellido}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Dirección:</strong> ${direccion}</p>
+    <p><strong>Teléfono:</strong> ${tel}</p>
+    <p><strong>Fecha de nacimiento:</strong> ${fecnac}</p>
+  `;
 });
