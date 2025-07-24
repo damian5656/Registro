@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+<div class="form-container">
+        <h2>Registro Básico</h2>
+        <form id="registroForm" action="#" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+            </div>
+                <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="tu@ejemplo.com" required>
+            </div>
+                <div class="form-group">
+                <label for="email">Password:</label>
+                <input type="password" id="pass" name="pass" placeholder="Ingresa tu contraseña" required>
+            </div>
+              <div class="form-group">
+                <label for="email">Repite Password:</label>
+                <input type="password" id="passtwo" name="pass" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Tu direccion" required>
+            </div>
+              <div class="form-group">
+                <label for="TEL">TEL:</label>
+                <input type="text" id="tel" name="tel" placeholder="Su telefono" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+
+            <Input id="hola" type="submit"></Input>
+            <Input id="hola"type="reset"></Input>
+        </form>
+       <p id="mensaje" style="color: red;"></p>
+        <p id="mensajes" style="color: red;"></p>
+        
+    </div>
+
+    </main>
+</body>
+ <script src="script.js"></script>
+</html>
